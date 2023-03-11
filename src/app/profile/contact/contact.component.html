@@ -1,0 +1,82 @@
+<div class="section" id="contact">
+    <div class="cc-contact-information" style="background-image: url('assets/images/contact.jpg');">
+        <div class="container">
+            <div class="cc-contact">
+                <div class="row">
+                    <div class="col-md-9">
+                        <div class="card mb-0" data-aos="zoom-in">
+                            <div class="h4 text- title">Contact Me</div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="card-body">
+                                        <form #contactForm="ngForm" (ngSubmit)="onSubmit(contactForm)">
+
+                                            <div class="p pb-3">
+                                                <strong>Feel free to contact me </strong>
+                                            </div>
+                                            <div class="row mb-3">
+                                                <div class="col">
+                                                    <div class="input-group">
+                                                        <span class="input-group-addon">
+                                                            <i class="fa fa-user-circle"></i>
+                                                        </span>
+                                                        <input type="text" id="name" name="name" class="form-control"
+                                                            placeholder="Name" required [(ngModel)]="name">
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="row mb-3">
+                                                <div class="col">
+                                                    <div class="input-group">
+                                                        <span class="input-group-addon">
+                                                            <i class="fa fa-envelope"></i>
+                                                        </span>
+                                                        <input type="email" id="email" name="email" class="form-control"
+                                                            placeholder="E-mail"
+                                                            pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$"
+                                                            required [(ngModel)]="email">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row mb-3">
+                                                <div class="col">
+                                                    <div class="form-group">
+                                                        <textarea id="message" name="message" class="form-control"
+                                                            placeholder="Your Message" rows="5" required
+                                                            [(ngModel)]="message"></textarea>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div *ngIf="errorMessage" class="alert alert-danger">{{errorMessage}}</div>
+
+                                            <button type="submit" class="btn btn-primary"
+                                                [disabled]="!contactForm.valid">Send</button>
+                                        </form>
+
+                                        <div *ngIf="messageSent" class="alert alert-success">Your message has been sent!
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="card-body">
+                                        <p class="mb-0">
+                                            <strong>Phone</strong>
+                                        </p>
+                                        <p class="pb-2">+2348134536169</p>
+                                        <p class="mb-0">
+                                            <strong>Email</strong>
+                                        </p>
+                                        <p>oyewoleseun22@gmail.com</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
